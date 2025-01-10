@@ -8,10 +8,12 @@ MovieFlix is a modern web application for discovering and exploring TV shows. Us
 ## 📸 Screenshots
 
 ### Home Page
-![Home Page](https://via.placeholder.com/800x400?text=Home+Page+Screenshot)
+![home_page](https://github.com/user-attachments/assets/ade59fda-da62-40cb-8532-a37b8d0f468b)
 
 ### Show Page
-![Show Page](https://via.placeholder.com/800x400?text=Show+Page+Screenshot)
+![show_page](https://github.com/user-attachments/assets/558cb551-4c7f-4238-9050-a48811b4762a)
+
+
 
 ---
 
