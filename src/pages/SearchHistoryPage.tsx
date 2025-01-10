@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Header from "@/components/custom/Header";
 import { Search, Clock, Trash2, Filter } from "lucide-react";
+import { SearchHistoryItem } from "@/lib/interfaces";
 
-interface SearchHistoryItem {
-  id: number;
-  query: string;
-  filters: Record<string, any>;
-  timestamp: string;
-}
+
 
 const SearchHistoryPage: React.FC = () => {
   const [searchHistory, setSearchHistory] = useState<SearchHistoryItem[]>([]);
@@ -31,7 +27,7 @@ const SearchHistoryPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900">
-      <Header title="Search History" />
+      <Header title="Movieflix" />
       <div className="max-w-4xl mx-auto px-4 pt-20 pb-12">
         <div className="flex items-center justify-between mb-8">
           <div className="flex items-center gap-3">

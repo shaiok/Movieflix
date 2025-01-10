@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Star } from "lucide-react";
 import { addFavoriteShow, removeFavoriteShow, isFavoriteShow } from "@/lib/favorites";
-import { Show } from "@/pages/HomePage";
+import { Show } from "@/lib/interfaces";
+
 
 interface ShowCardProps {
   show: Show; // Pass the full show object
@@ -47,11 +48,23 @@ const ShowCard: React.FC<ShowCardProps> = ({ show }) => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 p-4">
           <h3 className="text-lg font-bold text-white truncate">{show.title}</h3>
-          <div className="flex items-center gap-2">
-            <span className="text-sm text-white flex items-center gap-1">
-              <Star size={14} className="fill-teal-400" /> {show.rating}
-            </span>
-            <span className="text-sm text-gray-300">{show.year}</span>
+          <div className="flex flex-col gap-1">
+            <div className="flex items-center gap-2">
+              <span className="text-sm text-white flex items-center gap-1">
+                <Star size={14} className="fill-teal-400" /> {show.rating}
+              </span>
+              <span className="text-sm text-gray-300">{show.year}</span>
+            </div>
+            <div className="flex flex-wrap gap-1">
+              {show.genres.map((genre, index) => (
+                <span
+                  key={index}
+                  className="text-xs text-gray-300 bg-gray-900/50 dark:bg-gray-800/50 px-2 py-0.5 rounded-full"
+                >
+                  {genre}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>

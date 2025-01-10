@@ -3,23 +3,9 @@ import Header from "@/components/custom/Header";
 import ShowGrid from "@/components/custom/ShowGrid";
 import Filter from "@/components/custom/Filter";
 import { fetchAllShows, fetchShows } from "@/lib/api";
+import { Filters, Show } from "@/lib/interfaces";
 
-export interface Show {
-  id: number;
-  image: string;
-  title: string;
-  year: string;
-  rating: number;
-  language: string;
-  genres: string[];
-  isFavorite?: boolean;
-}
 
-interface Filters {
-  rating: number[];
-  languages: string[];
-  genres: string[];
-}
 
 const HomePage: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>(""); // User-entered query

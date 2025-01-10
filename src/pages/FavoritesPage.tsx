@@ -3,23 +3,9 @@ import Header from "@/components/custom/Header";
 import ShowGrid from "@/components/custom/ShowGrid";
 import Filter from "@/components/custom/Filter";
 import { getFavoriteShows, removeFavoriteShow } from "@/lib/favorites";
+import { Filters, Show } from "@/lib/interfaces";
 
-export interface Show {
-  id: number;
-  image: string;
-  title: string; // Title of the show
-  year: string; // Release year
-  rating: number; // Average rating
-  language: string; // Show language
-  genres: string[]; // List of genres
-  isFavorite?: boolean; // Optional favorite flag
-}
 
-interface Filters {
-  rating: number[]; // Expect an array of numbers
-  languages: string[]; // Expect an array of strings
-  genres: string[]; // Expect an array of strings
-}
 
 const FavoritesPage: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>(""); // User-entered query
@@ -81,10 +67,12 @@ const FavoritesPage: React.FC = () => {
 
   // Handle favorite toggle
   const handleFavoriteToggle = (id: number) => {
-    removeFavoriteShow(id); // Remove show from local storage
+    removeFavoriteShow(id);
+    // Get fresh data from localStorage
     const updatedFavorites = getFavoriteShows();
-    setFavorites(updatedFavorites);
-    setFilteredFavorites(updatedFavorites); // Update filtered favorites
+    // Force state updates with new arrays
+    setFavorites([...updatedFavorites]);
+    setFilteredFavorites([...updatedFavorites]);
   };
 
   const handleSearch = (query: string) => {
@@ -98,7 +86,7 @@ const FavoritesPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white">
       {/* Header */}
-      <Header title="MovieFlix - Favorites" onSearch={handleSearch} />
+      <Header title="MovieFlix" onSearch={handleSearch} />
 
       {/* Main Content */}
       <section className="pb-8 px-4 pt-20">

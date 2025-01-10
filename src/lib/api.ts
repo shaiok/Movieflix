@@ -10,8 +10,6 @@ export const fetchShows = async (
     q: query,
   };
 
-  console.log("Filters before params transformation:", filters); // Debug log
-
   if (filters.genres && filters.genres.length > 0) {
     params.genres = filters.genres.join(","); // Convert array to comma-separated string
   }
@@ -24,9 +22,6 @@ export const fetchShows = async (
   if (filters.languages && filters.languages.length > 0) {
     params.languages = filters.languages.join(","); // Convert array to comma-separated string
   }
-
-  console.log("Final API Parameters:", params); // Debug log
-
   const response = await axios.get("http://localhost:5000/api/search", {
     params, // Send the processed params
   });

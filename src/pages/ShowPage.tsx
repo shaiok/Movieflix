@@ -2,38 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { fetchShowById, fetchSeasons, fetchEpisodes } from "@/lib/api";
 import { ArrowLeft, Star, Clock } from "lucide-react";
+import { Episode, Season, ShowExtend as Show } from "@/lib/interfaces";
 
-export interface Episode {
-  id: number;
-  title: string;
-  description: string;
-  duration: string;
-  thumbnail: string;
-  number: number; // Added episode number
-}
 
-export interface Season {
-  id: number;
-  seasonNumber: number;
-  episodeCount: number;
-  premiereDate: string;
-  endDate: string;
-}
-
-export interface Show {
-  id: number;
-  title: string;
-  year: string;
-  rating: number;
-  language: string;
-  genres: string[];
-  description: string;
-  cast: string[];
-  creator: string;
-  episodes: Episode[];
-  coverImage: string;
-  isFavorite: boolean;
-}
 
 const DEFAULT_THUMBNAIL = "https://via.placeholder.com/150?text=No+Image";
 

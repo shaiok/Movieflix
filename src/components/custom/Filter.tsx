@@ -17,7 +17,30 @@ const Filter: React.FC<FilterProps> = ({ onFilterChange }) => {
 
   // Sample data
   const languages = ["English", "Spanish", "French", "German", "Japanese", "Korean"];
-  const genres = ["Action", "Comedy", "Drama", "Horror", "Romance", "Science-Fiction", "Thriller"];
+  const genres = [
+    "Action",
+    "Adventure",
+    "Anime",
+    "Comedy",
+    "Crime",
+    "Drama",
+    "Espionage",
+    "Family",
+    "Fantasy",
+    "History",
+    "Horror",
+    "Legal",
+    "Medical",
+    "Music",
+    "Mystery",
+    "Romance",
+    "Science-Fiction",
+    "Sports",
+    "Supernatural",
+    "Thriller",
+    "War",
+    "Western"
+  ];
   const ratings = [9, 8, 7, 6, 5];
 
   const handleRatingToggle = (rating: number) => {
@@ -85,7 +108,7 @@ const Filter: React.FC<FilterProps> = ({ onFilterChange }) => {
               <h3 className="text-lg font-medium text-gray-900 dark:text-white">Filters</h3>
               <button
                 onClick={clearFilters}
-                className="text-sm text-gray-500 dark:text-gray-400 hover:text-teal-400"
+                className=" py-2 bg-teal-500 text-white rounded-md hover:bg-teal-600 transition-colors"
               >
                 Clear all
               </button>

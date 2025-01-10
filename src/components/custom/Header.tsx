@@ -28,7 +28,7 @@ const Header: React.FC<HeaderProps> = ({ title, onSearch }) => {
   return (
     <header className="fixed w-full z-50 p-4 flex items-center gap-4 bg-gray-100 dark:bg-gray-900">
       {/* Title */}
-      <Link to="/" className="text-2xl font-bold text-gray-900 dark:text-white">
+      <Link to="/home" className="text-2xl font-bold text-gray-900 dark:text-white">
         {title}
       </Link>
 
